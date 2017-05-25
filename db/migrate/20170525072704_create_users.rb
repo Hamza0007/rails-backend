@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :name
       t.integer :age
-      t.double :average
+      t.decimal :average
       t.string :role
       t.string :status
       t.integer :matches
