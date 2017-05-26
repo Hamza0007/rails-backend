@@ -14,7 +14,7 @@ class Api::V1::TeamsController < ApplicationController
 
   def index
     @teams = Team.all
-    render json: @teams.to_json(only: [:id, :name, :country])
+    render json: @teams, include: { users: {only: [:name, :matches, :average]}}, except: [:created_at, :updated_at]
   end
 
   def show
